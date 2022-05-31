@@ -68,13 +68,13 @@ La relación de Character y Episode será de muchos a muchos, ya que un personaj
 ## Backend
 Se debe desarrollar un servidor en Node/Express con las siguientes rutas:
 
-- [ ] GET /characters:
+- [+] GET /characters:
     - Obtener el listado de personajes
     - Debe devolver solo los datos necesarios para la ruta principal
-- [ ] GET /episodes:
+- [+] GET /episodes:
     - Debe devolver un listado con todos los episodios 
     - En una primera instancia deberán obtenerlos desde la API externa y guardarlos en su propia base de datos. Luego ya podrán utilizarlos desde allí
-- [ ] POST /character:
+- [+] POST /character:
     - Recibe los datos recolectados por body desde el formulario controlado de la ruta de creación de personaje 
     - Crea un personaje en la base de datos
 

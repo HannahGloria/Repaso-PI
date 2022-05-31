@@ -2,6 +2,11 @@ require('dotenv').config()
 const { Sequelize } = require('sequelize')
 const fs = require('fs')
 const path = require('path')
+//const Character = require('./models/Character')
+//const Episode = require('./models/Episode')
+const {
+  DB_HOST, DB_PASSWORD, DB_USER
+} = process.env
 
 const sequelize = new Sequelize(
   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/repasopi`,
@@ -36,8 +41,11 @@ sequelize.models = Object.fromEntries(capsEntries)
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
+const { Character, Episode } = sequelize.models; //trae los modelos de sequelize
 
 // Aca vendrian las relaciones
+Character.belongsToMany(Episode, {through: "characters_episodes"})
+Episode.belongsToMany(Character, {through: "characters_episodes"})
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
