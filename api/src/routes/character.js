@@ -5,7 +5,7 @@ const router = Router();
 const { getCharacters, postCharacters } = require('../controllers/controllers')
 
 
-router.get('/', getCharacters);
-router.post('/', postCharacters)
+router.get('/getCharacter', getCharacters);
+router.post('/create', postCharacters)
 
 module.exports = router;

@@ -8,31 +8,26 @@ module.exports = (sequelize) => {
       type: DataTypes.UUID, //esto fue especificamente con el de countries
       defaultValue: DataTypes.UUIDV4, //misma cosa pero las chances de colison son casi nulas y pues aqui esta en valor por defecto
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      unique: true,
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
     species: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     origin:{
       type: DataTypes.STRING,
-      allowNull: false,
     },
     image:{
       type: DataTypes.STRING,
-      allowNull: false,
     },
     created:{
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    CreatedDb:{
       type: DataTypes.BOOLEAN,
-      allowNull: false,
-    }
+      defaultValue: false,
+    },
   });
 };
