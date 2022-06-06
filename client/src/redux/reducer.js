@@ -38,7 +38,6 @@ export default function rootReducer(state = initialState, action) { //el reducer
                     ...state,
                 }
             }
-         
         default : 
             return state;
     }

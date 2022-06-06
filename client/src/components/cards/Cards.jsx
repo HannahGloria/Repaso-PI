@@ -7,6 +7,7 @@ import Filter from "../filtro/filtro";
 
 export default function Multiplecards(){
     const dispatch = useDispatch();
+    //const stateOnlyCharacters =  useSelector(state => state.personajes) // personajes: [{}, {}]
     const personajesRenderizar = useSelector((state) => state.filtrados);
 
     useEffect(()=>{
@@ -22,12 +23,14 @@ export default function Multiplecards(){
 
             {personajesRenderizar.length > 0 ? (
                 personajesRenderizar.map((pj, posicion) => (
-                <Card 
-                    key={posicion} 
-                    name={pj.name} 
-                    image={pj.image} 
-                    species={pj.species}
-                />
+                <>
+                    <Card 
+                        key={posicion} 
+                        name={pj.name} 
+                        image={pj.image} 
+                        species={pj.species}
+                    />
+                </>
                 ))
                 ) : ( 
                 <h1>Loading...</h1>

@@ -7,7 +7,7 @@ import Filter from '../components/filtro/filtro';
 export const getAll = 'Get all';
 export const get_Episodes = 'Get episodes'
 export const routeGet = 'http://localhost:3001/character/getCharacter';
-export const routeGetEpisodes = 'http://localhost:3001/episode/getEpisodes'
+export const routeGetEpisodes = 'http://localhost:3001/episode'
 export const filtrar = "filtrar"
 
 export function getThis(){
